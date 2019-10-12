@@ -6,40 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-        <SurfaceView
-            android:id="@+id/camerapreview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></SurfaceView>
+    <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/camerapreview"></SurfaceView>
 
     <TextView
-        android:id="@+id/tvPrompt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="LINE UP QR CODE"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:typeface="sans"
+        android:id="@+id/textView"
+        android:text="Focus on QR code."
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(   )"
-        android:textColor="#FFFFFF"
-        android:textSize="180sp"
-        app:layout_constraintBottom_toBottomOf="@+id/camerapreview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/camerapreview" />
-
+        app:layout_constraintTop_toBottomOf="@id/camerapreview"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

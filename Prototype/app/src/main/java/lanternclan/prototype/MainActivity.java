@@ -1,20 +1,17 @@
 package lanternclan.prototype;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -28,19 +25,25 @@ public class MainActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
     CameraSource cameraSource;
-    TextView tvPrompt;
+    TextView textView;
     BarcodeDetector barcodeDetector;
+    //private TextReader textReader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //textReader = new TextReader(this);
+        final Context context = this;
 
         surfaceView = (SurfaceView) findViewById(R.id.camerapreview);
-        tvPrompt = (TextView) findViewById(R.id.tvPrompt);
+        textView = (TextView) findViewById(R.id.textView);
 
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.QR_CODE).build();
+
+        //cameraSource = new CameraSource.Builder(this,barcodeDetector)
+        //      .setRequestedPreviewSize(640,480).build();
 
         cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).setAutoFocusEnabled(true).build();
 
@@ -81,39 +84,29 @@ public class MainActivity extends AppCompatActivity {
                 final SparseArray<Barcode> qrCodes = detections.getDetectedItems();
 
                 if(qrCodes.size() != 0) {
-                    tvPrompt.post(new Runnable() {
+                    textView.post(new Runnable() {
                         @Override
                         public void run() {
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
+                            String s = qrCodes.valueAt(0).displayValue;
+
+
+                            String textReader = null;
+
                             try {
-                                String s = /*qrCodes.valueAt(0).displayValue)*/ "1ABC";
-                                String file = "data.csv";
-                                String textReader = (TextReader.readCode(s, file)).toString();
-
-                                tvPrompt.setText(textReader);
-                                //tvPrompt.setText(qrCodes.valueAt(0).displayValue);
-
-                           } catch (FileNotFoundException e) {
-                                System.out.println("File not found!");
+                                textReader = (TextReader.readCode(context)).toString();
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
                             }
+
+                            textView.setText(textReader);
+
+
                         }
                     });
                 }
             }
         });
-
-        Button btnNext = (Button) findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToIngredientList();
-            }
-        });
-    }
-
-    private void goToIngredientList() {
-        Intent intent = new Intent(MainActivity.this, IngredientList.class);
-        startActivity(intent);
     }
 }
