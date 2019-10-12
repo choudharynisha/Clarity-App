@@ -1,4 +1,4 @@
-# Project by The Lantern Clan
+# Clarity by The Lantern Clan
 
 The Lantern Clan is a team of six Bryn Mawr College students: Nadine Adnane ('20), Viktoria Braun ('21), Nisha Choudhary ('21), Nitisha Bhandari ('22), Nigina Daniyarov ('22), and Faryal Khan ('22).
 
@@ -6,12 +6,12 @@ Together, the project was created / developed at the second annual Estée Lauder
 
 ## Background
 
-Through the power of education, increasingly high interest in safe and natural ingredients, and the demand for skin care and makeup products, the idea for [this project] was born. Today's consumers are not only interested in enhancing their natural beauty, but they are also concerned with how they are doing so. Hence, making sure that consumers are aware of what is in the products they use is essential. That's where [this project] comes in.
+Through the power of education, increasingly high interest in safe and natural ingredients, and the demand for skin care and makeup products, the idea for Clarity was born. Today's consumers are not only interested in enhancing their natural beauty, but they are also concerned with how they are doing so. Hence, making sure that consumers are aware of what is in the products they use is essential. That's where Clarity comes in.
 
 ## Objective
 
 This Android app allows consumers to look at ingredients in products sold in stores of brands owned by the Estée Lauder Companies. For this hackathon, we focused specificially on a product sold by Origin.
 
-## Using [This App]
+## Using Clarity
 
 ## The Future
