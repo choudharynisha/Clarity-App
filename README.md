@@ -15,3 +15,8 @@ This Android app allows consumers to look at ingredients in products sold in sto
 ## Using Clarity
 
 ## The Future
+
+- [ ] Create a database with the information of all products.
+- [ ] Expand to products of all ELC subsidiaries.
+- [ ] Dynamically make the ingredients' cards.
+- [ ] Browse all products in the app without having to scan a QR Code.
