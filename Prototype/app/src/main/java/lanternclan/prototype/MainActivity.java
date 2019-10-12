@@ -1,6 +1,5 @@
 package lanternclan.prototype;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -29,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     CameraSource cameraSource;
     TextView textView;
     BarcodeDetector barcodeDetector;
+    //private TextReader textReader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //textReader = new TextReader(this);
 
         surfaceView = (SurfaceView) findViewById(R.id.camerapreview);
         textView = (TextView) findViewById(R.id.textView);
@@ -44,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         //cameraSource = new CameraSource.Builder(this,barcodeDetector)
         //      .setRequestedPreviewSize(640,480).build();
 
-        cameraSource = new CameraSource.Builder(this, barcodeDetector) .setRequestedPreviewSize(640, 480) .setAutoFocusEnabled(true) .build();
+        cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).setAutoFocusEnabled(true).build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
-                if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+                if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
 
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
+
             public void release() {
 
             }
@@ -89,12 +91,15 @@ public class MainActivity extends AppCompatActivity {
                             vibrator.vibrate(1000);
                             try {
                                 String s = /*qrCodes.valueAt(0).displayValue)*/ "1ABC";
+                                String file = "data.csv";
+                                String textReader = (TextReader.readCode(s, file)).toString();
 
-                                textView.setText((TextReader.readCode(s, "data.csv")).toString());
+                                textView.setText(textReader);
                                 //textView.setText(qrCodes.valueAt(0).displayValue);
 
-                           }
-                            catch (FileNotFoundException e) { System.out.println("File not found!!"); }
+                           } catch (FileNotFoundException e) {
+                                System.out.println("File not found!");
+                            }
                         }
                     });
                 }
