@@ -15,7 +15,7 @@ This Android app is designed to allow consumers to look at ingredients in produc
 ## Using Clarity
 
 1. Download the prototype folder.
-2. Using Android studio, run the app in an emulator.
+2. Using Android Studio, run the app in an emulator, or export it to your Android device.
 3. Scan the QR Code (provided in the Demonstration folder) using the app.
 4. You should see the product name (GINZING™ – Ultra Hydrating, Energy-Boosting Cream), the product picture, and ingredients.
 5. Tap on one ingredient at a time.
@@ -25,7 +25,7 @@ This Android app is designed to allow consumers to look at ingredients in produc
 7. Repeat steps 5 and 6 for all of the ingredients of the GINZING™ – Ultra Hydrating, Energy-Boosting Cream you would like to look at.
 8. In order to go back to the QR Code scanner, tap or click on the x in the upper right corner of the screen.
 
-## Next Steps
+## Next Possible Steps for Estée Lauder Companies
 
 - [ ] Create a database with the information of all products.
 - [ ] Expand to products of all ELC subsidiaries.
