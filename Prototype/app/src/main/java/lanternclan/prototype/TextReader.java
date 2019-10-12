@@ -5,14 +5,26 @@ import java.io.IOException;
 import java.io.*;
 import java.util.*;
 
-public class TextReader
-{
-    public static ArrayList<String> readCode(String find, String filename) throws FileNotFoundException{
+public class TextReader {
+//    private MainActivity mainActivity;
+//
+//    // Constructor
+//    public TextReader(MainActivity activity) {
+//
+//        // Save instance of main class for future use
+//        mainActivity = activity;
+//
+//        // Call method in MainActivity
+//        mainActivity.release();
+//
+//    }
+    public static ArrayList<String> readCode(String find, String filename) throws FileNotFoundException {
         //String filename = "data.csv";
         String id, name;
         ArrayList<String> ingredients = new ArrayList<String>();
         ArrayList<String> results = new ArrayList<String>();
-        try{
+
+        try {
             Scanner file = new Scanner(new File (filename));
 
             file.nextLine(); //skip first line
@@ -33,13 +45,15 @@ public class TextReader
             }
 
             System.out.println("reached");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found!!");
         }
-        catch (FileNotFoundException e) { System.out.println("File not found!!"); }
+
         return results;
 
     }
 
-//    public static void main(String[] args){
+//    public static void main(String[] args) {
 //        try {
 //            System.out.println(readCode("1ABC", "data.csv").toString());
 //
