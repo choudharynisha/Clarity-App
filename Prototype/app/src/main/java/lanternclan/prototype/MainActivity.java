@@ -20,6 +20,7 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -86,7 +87,14 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
-                            textView.setText(qrCodes.valueAt(0).displayValue);
+                            try {
+                                String s = /*qrCodes.valueAt(0).displayValue)*/ "1ABC";
+
+                                textView.setText((TextReader.readCode(s, "data.csv")).toString());
+                                //textView.setText(qrCodes.valueAt(0).displayValue);
+
+                           }
+                            catch (FileNotFoundException e) { System.out.println("File not found!!"); }
                         }
                     });
                 }
