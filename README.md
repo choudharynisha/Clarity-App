@@ -14,6 +14,17 @@ This Android app allows consumers to look at ingredients in products sold in sto
 
 ## Using Clarity
 
+1. Download the prototype folder.
+2. Using Android studio, run the app in an emulator.
+3. Scan the QR Code (provided in the Demonstration folder) using the app.
+4. You should see the product name (GINZING™️ – Ultra Hydrating, Energy-Boosting Cream), the product picture, and ingredients.
+5. Tap on one ingredient at a time.
+    1. You should see the ingredient page corresponding to the ingredient you tapped on.
+    2. Under the ingredient's name, you should see its source (where it is found), a picture of the source, the purpose of why the ingredient is used, more information about the ingredient, and more products with the ingredient.
+6. In order to go back to the product page, tap or click on the x in the upper right corner of the screen.
+7. Repeat steps 5 and 6 for all of the ingredients of the GINZING™️ – Ultra Hydrating, Energy-Boosting Cream you would like to look at.
+8. In order to go back to the QR Code scanner, tap or click on the x in the upper right corner of the screen.
+
 ## Next Steps
 
 - [ ] Create a database with the information of all products.
