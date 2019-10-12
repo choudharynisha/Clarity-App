@@ -10,7 +10,7 @@ Through the power of education, increasingly high interest in safe and natural i
 
 ## Objective
 
-This Android app allows consumers to look at ingredients in products sold in stores of brands owned by the Estée Lauder Companies. For this hackathon, we focused specificially on a single product sold by Origins.
+This Android app is designed to allow consumers to look at ingredients in products sold in stores of brands owned by the Estée Lauder Companies. For this hackathon, we focused specificially on a single product sold by Origins.
 
 ## Using Clarity
 
