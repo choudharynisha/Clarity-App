@@ -14,7 +14,7 @@ This Android app allows consumers to look at ingredients in products sold in sto
 
 ## Using Clarity
 
-## The Future
+## Next Steps
 
 - [ ] Create a database with the information of all products.
 - [ ] Expand to products of all ELC subsidiaries.
